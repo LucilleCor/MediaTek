@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MediaTek86
+namespace MediaTek86.Vue
 {
-    public partial class Form1 : Form
+    public partial class Authentification : Form
     {
-        public Form1()
+        public Authentification()
         {
             InitializeComponent();
         }
