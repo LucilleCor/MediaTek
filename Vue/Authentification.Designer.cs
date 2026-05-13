@@ -43,6 +43,7 @@
             this.btnSeConnecter.TabIndex = 0;
             this.btnSeConnecter.Text = "Se connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
+            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // lblLogin
             // 
@@ -75,6 +76,7 @@
             this.txtbPwd.Name = "txtbPwd";
             this.txtbPwd.Size = new System.Drawing.Size(100, 20);
             this.txtbPwd.TabIndex = 4;
+            this.txtbPwd.UseSystemPasswordChar = true;
             // 
             // Authentification
             // 

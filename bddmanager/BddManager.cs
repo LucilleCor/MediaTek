@@ -44,7 +44,7 @@ namespace MediaTek86.bddmanager
         /// </summary>
         /// <param name="stringQuery">requête autre que select</param>
         /// <param name="parameters">dictionnaire contenant les parametres</param>
-        public void reqUpdate(string stringQuery, Dictionary<string, object> parameters = null)
+        public void ReqUpdate(string stringQuery, Dictionary<string, object> parameters = null)
         {
             MySqlCommand command = new MySqlCommand(stringQuery, connection);
             if (!(parameters is null))

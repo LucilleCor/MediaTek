@@ -5,8 +5,8 @@
     /// </summary>
     public class Responsable
     {
-        public string login { get; }
-        public string pwd { get; }
+        public string Login { get; }
+        public string Pwd { get; }
 
         /// <summary>
         /// Constructeur de la classe Responsable
@@ -15,8 +15,8 @@
         /// <param name="pwd"></param>
         public Responsable(string login, string pwd)
         {
-            this.login = login;
-            this.pwd = pwd;
+            this.Login = login;
+            this.Pwd = pwd;
         }
 
     }

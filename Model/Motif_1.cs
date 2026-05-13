@@ -1,19 +1,19 @@
 ﻿namespace MediaTek86.Model
 {
-    public class Service
+    public class Motif
     {
         public int IdService { get;}
-        public string Libelle { get; }
+        public string Nom { get; }
 
         /// <summary>
-        /// Valorise les propriétés de la classe Service
+        /// Valorise les propriétés de la classe Motif
         /// </summary>
         /// <param name="idservice"></param>
-        /// <param name="libelle"></param>
-        public Service(int idservice, string libelle)
+        /// <param name="nom"></param>
+        public Motif(int idservice, string nom)
         {
             this.IdService = idservice;
-            this.Libelle = libelle;
+            this.Nom = nom;
         }
 
         /// <summary>
@@ -22,7 +22,7 @@
         /// <returns></returns>
         public override string ToString()
         {
-            return this.Libelle;
+            return this.Nom;
         }
     }
 }
