@@ -2,9 +2,6 @@
 using MediaTek86.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaTek86.Controlleur
 {
@@ -13,10 +10,6 @@ namespace MediaTek86.Controlleur
     /// </summary>
     public class FrmMediaTekControlleur
     {
-        /// <summary>
-        /// Boolean pour savoir si une modification d'un personnel est demandée
-        /// </summary>
-        private Boolean EnCoursModifPersonnel = false;
         /// <summary>
         /// Objet d'accès aux opérations possible sur les personnels
         /// </summary>
@@ -29,6 +22,10 @@ namespace MediaTek86.Controlleur
         /// Objet d'accès aux opérations possible sur les motifs d'absence
         /// </summary>
         private readonly MotifAccess motifAccess;
+        /// <summary>
+        /// Objet d'accès aux opérations possible sur les absences
+        /// </summary>
+        private readonly AbsenceAccess absenceAccess;
 
         /// <summary>
         /// Récupère les accès aux données
@@ -38,6 +35,7 @@ namespace MediaTek86.Controlleur
             serviceAccess = new ServiceAccess();
             personnelaccess = new PersonnelAccess();
             motifAccess = new MotifAccess();
+            absenceAccess = new AbsenceAccess();
         }
 
         /// <summary>
@@ -47,6 +45,15 @@ namespace MediaTek86.Controlleur
         public List<Personnel> GetLesPersonnels()
         {
             return personnelaccess.GetLesPersonnels();
+        }
+
+        /// <summary>
+        /// Demande de suppression d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
+        public void DelPersonnel(Personnel personnel)
+        {
+            personnelaccess.DelPersonnel(personnel);
         }
 
         /// <summary>
@@ -68,19 +75,10 @@ namespace MediaTek86.Controlleur
         }
 
         /// <summary>
-        /// Demande de suppression d'un personnel
-        /// </summary>
-        /// <param name="personnel"></param>
-        public void DelPersonnel(Personnel personnel)
-        {
-            personnelaccess.DelPersonnel(personnel);
-        }
-
-        /// <summary>
         /// Récupère et retourne la liste des services
         /// </summary>
         /// <returns></returns>
-        public List<Motif> GetLesServices()
+        public List<Service> GetLesServices()
         {
             return serviceAccess.GetLesServices();
         }
@@ -89,9 +87,56 @@ namespace MediaTek86.Controlleur
         /// Récupère et retourne la liste des motifs d'absence
         /// </summary>
         /// <returns></returns>
-        public List<Motif> GetLesMotifs()
+        public List<Motif>GetLesMotifs()
         {
             return motifAccess.GetLesMotifs();
+        }
+
+        /// <summary>
+        /// Récupère et retourne la liste des absence d'un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
+        /// <returns></returns>
+        public List<Absence> GetLesAbsences(Personnel personnel) 
+        {
+            return absenceAccess.GetLesAbsences(personnel);
+        }
+
+        /// <summary>
+        /// Demande de modification d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
+        public void UpdateAbsence(Absence absence) 
+        { 
+            absenceAccess.UpdateAbsence(absence);
+        }
+
+        /// <summary>
+        /// Demande d'ajout d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
+        public void AddAbsence(Absence absence)
+        {
+            absenceAccess.AddAbsence(absence);
+        }
+
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="absence"></param>
+        public void DelAbsence(Absence absence)
+        {
+            absenceAccess.DelAbsence(absence);
+        }
+
+        /// <summary>
+        /// Vérification si une absence existe déjà sur les dates
+        /// </summary>
+        /// <param name="absence"></param>
+        /// <returns></returns>
+        public Boolean DispoAbsence(Absence absence)
+        {
+            return absenceAccess.DispoAbsence(absence);
         }
     }
 }

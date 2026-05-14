@@ -2,6 +2,7 @@
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace MediaTek86.dal
 {
@@ -77,9 +78,9 @@ namespace MediaTek86.dal
                         Log.Debug("PersonnelAccess.GetLesPersonnels nb records = {0}", records.Count);
                         foreach (Object[] record in records)
                         {
-                            Log.Debug("PersonnelAccess.GetLesPersonnels Motif : idservice={0} nom={1}", record[5], record[6]);
+                            Log.Debug("PersonnelAccess.GetLesPersonnels Service : idservice={0} nom={1}", record[5], record[6]);
                             Log.Debug("PersonnelAccess.GetLesPersonnels Personnel : idpersonnel={0} nom={1} prenom={2} tel={3} mail={4} ", record[0], record[1], record[2], record[3], record[4]);
-                            Motif service = new Motif((int)record[5], (string)record[6]);
+                            Service service = new Service((int)record[5], (string)record[6]);
                             Personnel personnel = new Personnel((int)record[0], (string)record[1], (string)record[2],
                                 (string)record[3], (string)record[4], service);
                             lesPersonnels.Add(personnel);

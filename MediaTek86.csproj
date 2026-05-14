@@ -119,7 +119,7 @@
     <Compile Include="Model\Motif.cs" />
     <Compile Include="Model\Personnel.cs" />
     <Compile Include="Model\Responsable.cs" />
-    <Compile Include="Model\Motif_1.cs" />
+    <Compile Include="Model\Service.cs" />
     <Compile Include="Vue\Authentification.cs">
       <SubType>Form</SubType>
     </Compile>

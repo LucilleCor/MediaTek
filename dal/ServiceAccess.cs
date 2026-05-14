@@ -27,9 +27,9 @@ namespace MediaTek86.dal
         /// Récupère et retourne les profils des services
         /// </summary>
         /// <returns></returns>
-        public List<Motif> GetLesServices()
+        public List<Service> GetLesServices()
         {
-            List<Motif> lesServices = new List<Motif>();
+            List<Service> lesServices = new List<Service>();
             if (access.Manager != null)
             {
                 string req = "select * from service order by nom";
@@ -42,7 +42,7 @@ namespace MediaTek86.dal
                         foreach (Object[] record in records)
                         {
                             Log.Debug("ServiceAccess.GetLesServices idservice={0} nom={1}", record[0], record[1]);
-                            Motif service = new Motif((int)record[0], (string)record[1]);
+                            Service service = new Service((int)record[0], (string)record[1]);
                             lesServices.Add(service);
                         }
                     }

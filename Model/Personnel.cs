@@ -7,7 +7,7 @@
         public string Prenom { get; set; }
         public string Tel { get; set; }
         public string Mail { get; set; }
-        public Motif Service { get; set; }
+        public Service Service { get; set; }
 
         /// <summary>
         /// Valorise les propriétés de la classe Personnel
@@ -18,7 +18,7 @@
         /// <param name="tel"></param>
         /// <param name="mail"></param>
         /// <param name="service"></param>
-        public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, Motif service)
+        public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, Service service)
         {
             this.IdPersonnel = idPersonnel;
             this.Nom = nom;

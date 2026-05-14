@@ -13,8 +13,8 @@ namespace MediaTek86.Model
         /// Constructeur classe Absence
         /// </summary>
         /// <param name="idpersonnel"></param>
-        /// <param name="dateDebut"></param>
-        /// <param name="dateFin"></param>
+        /// <param name="datedebut"></param>
+        /// <param name="datefin"></param>
         /// <param name="motif"></param>
         public Absence(int idpersonnel, DateTime datedebut, DateTime datefin, Motif motif)
         {

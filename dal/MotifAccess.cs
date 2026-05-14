@@ -27,7 +27,7 @@ namespace MediaTek86.dal
         /// Récupère et retourne les profils des motifs d'absence
         /// </summary>
         /// <returns></returns>
-        public List<Motif> GetLesMotifs()
+        public List<Motif>GetLesMotifs()
         {
             List<Motif> lesMotifs = new List<Motif>();
             if (access.Manager != null)

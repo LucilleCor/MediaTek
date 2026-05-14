@@ -1,29 +1,24 @@
-﻿namespace MediaTek86.Model
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MediaTek86.Model
 {
     public class Motif
     {
-        public string IdMotif { get; }
-        public string Libelle { get; }
-
-        /// <summary>
-        /// Valorise les propriétés de la classe Motif
-        /// </summary>
-        /// <param name="idmotif"></param>
-        /// <param name="libelle"></param>
-        public Motif(string idmotif, string libelle)
+        public int IdMotif { get; set; }
+        public string Libelle { get; set; }
+        public Motif(int id, string libelle)
         {
-            this.IdMotif = idmotif;
-            this.Libelle = libelle;
+            IdMotif = id;
+            Libelle = libelle;
         }
 
-        /// <summary>
-        /// Définit l'information à afficher (juste le libelle)
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
-            return this.Libelle;
+            return Libelle;
         }
     }
-
 }
