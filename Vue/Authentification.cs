@@ -1,13 +1,6 @@
 ﻿using MediaTek86.Controlleur;
 using MediaTek86.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MediaTek86.Vue
@@ -31,11 +24,19 @@ namespace MediaTek86.Vue
             Init();
         }
 
+        /// <summary>
+        /// Inisialisation du controleur 
+        /// </summary>
         private void Init()
         {
             controlleur = new FrmAuthentificationControlleur();
         }
 
+        /// <summary>
+        /// Demande de connexion à l'application, vérification des champs et de l'authentification du responsable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
             String login = txtbLogin.Text;

@@ -10,7 +10,7 @@ namespace MediaTek86.Model
         public Motif Motif { get; set; }
 
         /// <summary>
-        /// Constructeur classe Absence
+        /// Valorise les propriétés de la classe Absence
         /// </summary>
         /// <param name="idpersonnel"></param>
         /// <param name="datedebut"></param>

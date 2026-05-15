@@ -4,8 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace MediaTek86
+namespace MediaTek86.Vue
 {
+    /// <summary>
+    /// Fenêtre principale de l'application, elle permet de gérer les personnels et leurs absences
+    /// </summary>
     public partial class MediaTek : Form
     {
         /// <summary>
@@ -72,7 +75,6 @@ namespace MediaTek86
             bdgPersonnel.DataSource = lesPersonnels;
             dgvPersonnel.DataSource = bdgPersonnel;
             dgvPersonnel.Columns["IdPersonnel"].Visible = false;
-            dgvPersonnel.Columns["Service"].Visible = false;
             dgvPersonnel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
@@ -107,6 +109,7 @@ namespace MediaTek86
             dgvAbsence.DataSource = bdgAbsence;
             dgvAbsence.Columns["IdPersonnel"].Visible = false;
         }
+
 
         /// <summary>
         /// Demande de modification d'un personnel 
@@ -239,6 +242,20 @@ namespace MediaTek86
                 txtbPrenom.Text = "";
                 txtbTel.Text = "";
                 txtbMail.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// Changement de l'affichage de la liste des absences suivant le personnel sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvPersonnel_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPersonnel.SelectedRows.Count > 0)
+            {
+                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
+                RemplirListeAbsence(personnel);
             }
         }
 
@@ -388,13 +405,5 @@ namespace MediaTek86
             }
         }
 
-        private void dgvPersonnel_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvPersonnel.SelectedRows.Count > 0)
-            {
-                Personnel personnel = (Personnel)bdgPersonnel.List[bdgPersonnel.Position];
-                RemplirListeAbsence(personnel);
-            }
-        }
     }
 }

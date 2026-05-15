@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace MediaTek86.dal
 {
+    /// <summary>
+    /// Classe permettant de gérer les demandes concernant les absences du personnel
+    /// </summary>
     public class AbsenceAccess
     {
         /// <summary>

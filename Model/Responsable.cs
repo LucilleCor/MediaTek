@@ -9,7 +9,7 @@
         public string Pwd { get; }
 
         /// <summary>
-        /// Constructeur de la classe Responsable
+        /// Valorise les propriétés de la classe Responsable
         /// </summary>
         /// <param name="login"></param>
         /// <param name="pwd"></param>
