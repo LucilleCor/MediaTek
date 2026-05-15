@@ -327,9 +327,9 @@ namespace MediaTek86.Vue
             {
                 Motif motif = (Motif)bdgMotif.List[bdgMotif.Position];
                 Absence absence = new Absence(personnel.IdPersonnel, dtpDebut.Value, dtpFin.Value, motif);
-                Absence ancienneAbsence = (Absence)bdgAbsence.List[bdgAbsence.Position];
                 if (enCoursDeModifAbsence)
                 {
+                    Absence ancienneAbsence = (Absence)bdgAbsence.List[bdgAbsence.Position];
                     controlleur.DelAbsence(ancienneAbsence);
                     if (controlleur.DispoAbsence(absence))
                     {
@@ -360,7 +360,7 @@ namespace MediaTek86.Vue
                 MessageBox.Show("La date de début ne peut pas être ultérieure à la date de fin.", titreFenetreInformation);
             }
             RemplirListeAbsence(personnel);
-            grbModifAbsences.Text = "";
+            grbModifAbsences.Text = "Modification / Ajout d'une absence";
             grbPersonel.Enabled = true;
             grbModifAbsences.Enabled = false;
         }
@@ -379,7 +379,7 @@ namespace MediaTek86.Vue
                 grbModifAbsences.Enabled = false;
                 grbAbsences.Enabled = true;
                 grbPersonel.Enabled = true;
-                grbModifAbsences.Text = "";
+                grbModifAbsences.Text = "Modification / Ajout d'une absence";
             }
         }
 

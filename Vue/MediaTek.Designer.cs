@@ -303,6 +303,7 @@
             this.grbModifAbsences.Size = new System.Drawing.Size(825, 100);
             this.grbModifAbsences.TabIndex = 20;
             this.grbModifAbsences.TabStop = false;
+            this.grbModifAbsences.Text = "Modification / Ajout d\'une absence";
             // 
             // btnAnnulerAbsence
             // 
