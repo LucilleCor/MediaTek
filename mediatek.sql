@@ -22,8 +22,8 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS mediatek DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER 'MediaAdmin'@'%' IDENTIFIED BY 'media';
-GRANT USAGE ON *.* TO 'mediatek'@'%';
-GRANT ALL PRIVILEGES ON `mediatek`.* TO 'mediatek'@'%';
+GRANT USAGE ON *.* TO 'MediaAdmin'@'%';
+GRANT ALL PRIVILEGES ON `mediatek`.* TO 'MediaAdmin'@'%';
 USE mediatek;
 
 -- --------------------------------------------------------
@@ -66,7 +66,7 @@ INSERT INTO `absence` (`idpersonnel`, `datedebut`, `datefin`, `idmotif`) VALUES
 (7, '2026-02-13 02:24:00', '2026-02-20 22:44:59', 1),
 (8, '2026-02-06 13:07:08', '2026-02-20 21:49:17', 1),
 (9, '2026-02-08 19:05:14', '2026-02-16 07:08:07', 2),
-(10, '2026-02-11 16:48:07', '2026-02-16 12:25:56', 2)
+(10, '2026-02-11 16:48:07', '2026-02-16 12:25:56', 2),
 (1, '2026-02-26 16:39:51', '2026-03-02 19:51:06', 4),
 (2, '2026-02-27 14:05:55', '2026-03-04 21:53:12', 3),
 (3, '2026-02-25 15:22:35', '2026-03-02 19:21:48', 1),
