@@ -362,7 +362,10 @@ namespace MediaTek86.Vue
             RemplirListeAbsence(personnel);
             grbModifAbsences.Text = "Modification / Ajout d'une absence";
             grbPersonel.Enabled = true;
+            grbAbsences.Enabled = true;
             grbModifAbsences.Enabled = false;
+            dtpDebut.Value = DateTime.Now;
+            dtpFin.Value = DateTime.Now;
         }
 
         /// <summary>
